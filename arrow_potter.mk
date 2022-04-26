@@ -15,21 +15,25 @@
 # limitations under the License.
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, device/moto/potter/full_potter.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk)
 
-# Inherit some common DU stuff.
-$(call inherit-product, vendor/ev/config/common_full_phone.mk)
+# Inherit from potter device
+$(call inherit-product, device/motorola/potter/device.mk)
 
-# Installs gsi keys into ramdisk, to boot a GSI with verified boot.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+# Inherit some common ArrowOS stuff.
+$(call inherit-product, vendor/arrow/config/common.mk)
 
 # TWRP theme
 TW_THEME := portrait_hdpi
-BOOT_ANIMATION_SIZE := 1440p
 
-## Device identifier. This must come after all inclusions
+# Boot animation size
+TARGET_BOOT_ANIMATION_RES := 720
+
+# Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := potter
-PRODUCT_NAME := ev_potter
+PRODUCT_NAME := arrow_potter
 PRODUCT_BRAND := motorola
 PRODUCT_MANUFACTURER := Motorola
 PRODUCT_MODEL := Moto G5 Plus
@@ -43,9 +47,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 BUILD_FINGERPRINT := motorola/potter/potter:8.1.0/OPSS28.85-17-4/28698:user/release-keys
 
-# Set up the product codename, build version & MOTD.
-PRODUCT_CODENAME := Motus
-PRODUCT_VERSION_DEVICE_SPECIFIC := p1
-
-PRODUCT_MOTD :="\n\n\n--------------------MESSAGE---------------------\nThank you for choosing Evervolv for your Motorola G5 Plus\nPlease visit us at \#evervolv on irc.freenode.net\nFollow @preludedrew for the latest Evervolv updates\nGet the latest rom at evervolv.com\n------------------------------------------------\n"
-
+# for specific
+$(call inherit-product, vendor/motorola/potter/potter-vendor.mk)
