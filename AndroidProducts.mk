@@ -1,7 +1,7 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/arrow_potter.mk
+    $(LOCAL_DIR)/superior_potter.mk
 
 COMMON_LUNCH_CHOICES := \
-    arrow_potter-user \
-    arrow_potter-userdebug
-    arrow_potter-eng 
+    superior_potter-user \
+    superior_potter-userdebug
+    superior_potter-eng 
