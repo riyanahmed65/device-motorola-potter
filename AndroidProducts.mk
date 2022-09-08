@@ -3,5 +3,5 @@ PRODUCT_MAKEFILES := \
 
 COMMON_LUNCH_CHOICES := \
     arrow_potter-user \
-    arrow_potter-userdebug
+    arrow_potter-userdebug \
     arrow_potter-eng 
