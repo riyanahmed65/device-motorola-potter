@@ -393,7 +393,9 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libprotobuf-cpp-full \
     libxml2 \
-    libcnefeatureconfig
+    libcnefeatureconfig \
+    android.hardware.secure_element@1.0.vendor \
+    android.hardware.secure_element@1.0
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
